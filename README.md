@@ -6,7 +6,7 @@ A simple and common question for a student may be - can I take `MAT 242` if i've
 
 #### Interface
 
-![image](https://raw.githubusercontent.com/drbh/preq-ngin/master/images/interface.png)
+![image](https://raw.githubusercontent.com/drbh/preq-ngin/master/images/demo.mov.gif)
 
 ### How it works
 

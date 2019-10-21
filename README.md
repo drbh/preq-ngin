@@ -1,7 +1,29 @@
 # preq-ngin
 
+Automated prereq classification! Since we want to be able to programatically interact with prereqs, we need a way to convert them from non standardized strings into rich data objects. Rich data objects allow us to search, filter and ask questions. Whereas, with strings you cannot do much except match keywords (which fails in reality where people mis-spell or write slightly different setences with same intent).
 
+A simple and common question for a student may be - can I take `MAT 242` if i've taken `MAT 100` and `MAT 200`? 
 
+#### Interface
+
+![image](https://raw.githubusercontent.com/drbh/preq-ngin/master/images/interface.png)
+
+### How it works
+
+We currently do not have a good way to answer the above question. You can query for `MAT 242` and read the requirements string and check if those classes are included, but this requires human interaction (no good!)
+
+Best case, you should be able to ask the computer. I got `A` and `B` can I take `C`? So we do just that! 
+
+The system is simple and relies on safe fast technology like Regex, Rust and even Sublime Text's searching algo. 
+
+Basiclly we get each requirement string -  break it into it's individual requirements. Then we attempt to classify each of those requirements. This process makes me think of fitting pegs into a box. 
+![fitting](square-peg.jpg)
+
+Where in out case, we just try a bunch of fuzzy text matching untill we choose a shape that is the best fit. We tag a requirement with as many of the known classification if they meet a suffiently high enough similarity score.
+
+After we've tagged all the requirements. We want to intelligently pull all of the mentioned courses out. This is a diffcult matching problem as well since people have encoded classes in various formats. 
+
+## Included Apps
 
 #### Scrape
 This script is not included and the orignal datasource should be used in future iterations.
@@ -46,9 +68,4 @@ Finally we can use the data for 3 simple applications:
 ```
 cargo run --bin server
 ```
-
-#### Interface
-
-[image](https://raw.githubusercontent.com/drbh/preq-ngin/master/images/interface.png)
-
 

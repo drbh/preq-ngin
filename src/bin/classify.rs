@@ -34,7 +34,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // let file = File::open("./src/reqs-mini.csv")?;
     let reader = BufReader::new(file);
     for line in reader.lines() {
-        let vx: Vec<String> = line?.split("++").map(|x| x.to_string()).collect();
+        let vx: Vec<String> = line?.split("|").map(|x| x.to_string()).collect();
         mystring.push(vx[2].clone());
         myindexes.push(vx[1].clone());
     }

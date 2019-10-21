@@ -147,7 +147,7 @@ fn main() -> std::io::Result<()> {
             .service(web::resource("/single_class").route(web::post().to(single_class)))
             .service(web::resource("/can_i_take").route(web::post().to(can_i_take)))
     })
-    .bind("127.0.0.1:9090")?
+    .bind("0.0.0.0:9090")?
     .run()
 }
 

@@ -18,14 +18,23 @@ fn split_once(in_string: &str) -> (&str, &str) {
     (first, second)
 }
 
+fn split_twice(in_string: &str) -> (&str, &str, &str) {
+    let mut splitter = in_string.splitn(2, ',');
+    let first = splitter.next().unwrap();
+    let second = splitter.next().unwrap();
+    let third = splitter.next().unwrap();
+    (first, second, third)
+}
+
+
 fn main() -> Result<(), Box<dyn Error>> {
     let mut mystring: Vec<String> = Vec::new();
     let mut myindexes: Vec<String> = Vec::new();
-    let file = File::open("./src/reqs.csv")?;
+    let file = File::open("./all_reqs.csv")?;
     // let file = File::open("./src/reqs-mini.csv")?;
     let reader = BufReader::new(file);
     for line in reader.lines() {
-        let vx: Vec<String> = line?.split("++").map(|x| x.to_string()).collect();
+        let vx: Vec<String> = line?.split(",").map(|x| x.to_string()).collect();
         mystring.push(vx[2].clone());
         myindexes.push(vx[1].clone());
     }

@@ -175,7 +175,7 @@ if (document.getElementById("targetClass").value.length < 7 ){
 }
 checkIfCanTake() {
 console.log(this)
-    fetch("http://localhost:9090/can_i_take", {
+    fetch("/can_i_take", {
       "method": "POST",
       "headers": {
         "content-type": "application/json"
@@ -195,7 +195,7 @@ console.log(this)
       console.log(err);
     });    }
 fetchPreReq(e) {
-    fetch("http://localhost:9090/single_class", {
+    fetch("/single_class", {
       "method": "POST",
       "headers": {
         "content-type": "application/json"

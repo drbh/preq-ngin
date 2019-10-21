@@ -17,7 +17,8 @@ Best case, you should be able to ask the computer. I got `A` and `B` can I take 
 The system is simple and relies on safe fast technology like Regex, Rust and even Sublime Text's searching algo. 
 
 Basiclly we get each requirement string -  break it into it's individual requirements. Then we attempt to classify each of those requirements. This process makes me think of fitting pegs into a box. 
-![fitting](square-peg.jpg)
+
+![fitting](https://raw.githubusercontent.com/drbh/preq-ngin/master/images/square-peg.jpg)
 
 Where in out case, we just try a bunch of fuzzy text matching untill we choose a shape that is the best fit. We tag a requirement with as many of the known classification if they meet a suffiently high enough similarity score.
 

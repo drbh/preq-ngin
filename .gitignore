@@ -1,0 +1,9 @@
+/target
+**/*.rs.bk
+src/main.rs
+src/bin/scrape.rs
+src/bin/tester.rs
+src/reqs-mini.csv
+pages/*
+bak-result.json
+request.json

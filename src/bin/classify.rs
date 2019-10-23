@@ -35,6 +35,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let reader = BufReader::new(file);
     for line in reader.lines() {
         let vx: Vec<String> = line?.split("|").map(|x| x.to_string()).collect();
+	// println!("{:#?}",vx.clone());
         mystring.push(vx[2].clone());
         myindexes.push(vx[1].clone());
     }
